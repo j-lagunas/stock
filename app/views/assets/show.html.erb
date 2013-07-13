@@ -32,7 +32,11 @@
 
 <p>
   <strong>Taken:</strong>
-  <%= @asset.taken %>
+  <% if !@asset.taken %>
+    <em>0</em>
+  <% else %>
+    <em><%= @asset.taken %></em>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_asset_path(@asset) %> |

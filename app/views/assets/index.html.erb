@@ -25,7 +25,13 @@
         <td><%= asset.vendor_id %></td>
         <td><%= asset.location_id %></td>
         <td><%= asset.amount %></td>
-        <td><%= asset.taken %></td>
+        <td>
+          <% if !asset.taken %>
+            <em>0</em>
+          <% else %>
+            <em><%= asset.taken %></em>
+          <% end %>
+        </td>
         <td><%= link_to 'Show', asset %></td>
         <td><%= link_to 'Edit', edit_asset_path(asset) %></td>
         <td><%= link_to 'Destroy', asset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
