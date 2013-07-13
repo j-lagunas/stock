@@ -1,4 +1,6 @@
 Stock::Application.routes.draw do
+  resources :locations
+
   resources :vendors
 
   resources :assets
