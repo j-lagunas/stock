@@ -4,8 +4,8 @@ one:
   name: MyString
   part: MyString
   brand: MyString
-  vendorId: 1
-  location: 1
+  vendor_id: 1
+  location_id: 1
   amount: 1
   taken: 1
 
@@ -13,7 +13,7 @@ two:
   name: MyString
   part: MyString
   brand: MyString
-  vendorId: 1
-  location: 1
+  vendor_id: 1
+  location_id: 1
   amount: 1
   taken: 1

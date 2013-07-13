@@ -29,7 +29,7 @@ class VendorsController < ApplicationController
     respond_to do |format|
       if @vendor.save
         format.html { redirect_to @vendor, notice: 'Vendor was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @vendor }
+        format.json { render action: 'show', status: :created, location_id: @vendor }
       else
         format.html { render action: 'new' }
         format.json { render json: @vendor.errors, status: :unprocessable_entity }

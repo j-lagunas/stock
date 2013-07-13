@@ -15,6 +15,7 @@ class AssetsController < ApplicationController
   # GET /assets/new
   def new
     @asset = Asset.new
+    @vendors = Vendor.find(:all, :order=>'name')
   end
 
   # GET /assets/1/edit
@@ -69,6 +70,6 @@ class AssetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def asset_params
-      params.require(:asset).permit(:name, :part, :brand, :vendorId, :location, :amount, :taken)
+      params.require(:asset).permit(:name, :part, :brand, :vendor_id, :location, :amount, :taken)
     end
 end

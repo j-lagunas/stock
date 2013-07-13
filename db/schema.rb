@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130713045051) do
+ActiveRecord::Schema.define(version: 20130713060902) do
 
   create_table "assets", force: true do |t|
     t.string   "name"
     t.string   "part"
     t.string   "brand"
-    t.integer  "vendorId"
-    t.integer  "location"
+    t.integer  "vendor_id"
+    t.integer  "location_id"
     t.integer  "amount"
     t.integer  "taken"
     t.datetime "created_at"

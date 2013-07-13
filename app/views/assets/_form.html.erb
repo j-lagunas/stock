@@ -24,12 +24,12 @@
     <%= f.text_field :brand %>
   </div>
   <div class="field">
-    <%= f.label :vendorId %><br>
-    <%= f.number_field :vendorId %>
+    <%= f.label :vendor_id %><br>
+    <%= collection_select(:asset, :vendor_id, Vendor.all, :id, :name) %>
   </div>
   <div class="field">
     <%= f.label :location %><br>
-    <%= f.number_field :location %>
+    <%= collection_select(:asset, :location_id, Location.all, :id, :name) %>
   </div>
   <div class="field">
     <%= f.label :amount %><br>
