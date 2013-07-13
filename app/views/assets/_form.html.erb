@@ -28,7 +28,7 @@
     <%= collection_select(:asset, :vendor_id, Vendor.all, :id, :name) %>
   </div>
   <div class="field">
-    <%= f.label :location %><br>
+    <%= f.label :location_id %><br>
     <%= collection_select(:asset, :location_id, Location.all, :id, :name) %>
   </div>
   <div class="field">

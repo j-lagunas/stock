@@ -4,8 +4,8 @@ class CreateAssets < ActiveRecord::Migration
       t.string :name
       t.string :part
       t.string :brand
-      t.integer :vendorId
-      t.integer :location
+      t.integer :vendor_id
+      t.integer :location_id
       t.integer :amount
       t.integer :taken
 
