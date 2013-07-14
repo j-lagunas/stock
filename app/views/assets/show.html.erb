@@ -1,32 +1,32 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre:</strong>
   <%= @asset.name %>
 </p>
 
 <p>
-  <strong>Part:</strong>
+  <strong>Número de parte:</strong>
   <%= @asset.part %>
 </p>
 
 <p>
-  <strong>Brand:</strong>
+  <strong>Marca:</strong>
   <%= @asset.brand %>
 </p>
 
 <p>
-  <strong>vendor_id:</strong>
+  <strong>Distribuidor:</strong>
   <%= @asset.vendor_id %>
 </p>
 
 <p>
-  <strong>Location:</strong>
+  <strong>Ubicación:</strong>
   <%= @asset.location_id %>
 </p>
 
 <p>
-  <strong>Amount:</strong>
+  <strong>Existencia:</strong>
   <%= @asset.amount %>
 </p>
 
@@ -39,5 +39,5 @@
   <% end %>
 </p>
 
-<%= link_to 'Edit', edit_asset_path(@asset) %> |
-<%= link_to 'Back', assets_path %>
+<%= link_to 'Editar', edit_asset_path(@asset), :class=>"btn btn-large btn-info  " %> 
+<%= link_to 'Volver a listado', assets_path, :class=>"btn btn-large"%>

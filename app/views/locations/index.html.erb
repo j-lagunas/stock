@@ -1,12 +1,12 @@
-<h1>Listing locations</h1>
+<h2>Listado de ubicaciones</h2>
 
-<table>
+<table  class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Nombre</th>
+      <th style="width:20px!important"></th>
+      <th style="width:20px!important"></th>
+      <th style="width:20px!important"></th>
     </tr>
   </thead>
 
@@ -14,9 +14,21 @@
     <% @locations.each do |location| %>
       <tr>
         <td><%= location.name %></td>
-        <td><%= link_to 'Show', location %></td>
-        <td><%= link_to 'Edit', edit_location_path(location) %></td>
-        <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to(location) do %>
+            <span class="fui-search"></span>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to(edit_location_path(location)) do %>
+            <span class="fui-new"></span>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to(location, method: :delete, data: { confirm: '¿Seguro que desea eliminar?' }) do %>
+            <span class="fui-cross"></span>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Location', new_location_path %>
+<%= link_to 'Nueva ubicación', new_location_path, :class=>"btn btn-large btn-info" %>

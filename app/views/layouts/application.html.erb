@@ -7,8 +7,35 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	
+	<div class="container">
+    <div class="row">
+      <div class="span7">
+        <%= yield %>
+      </div> <!-- /span8 -->
 
-<%= yield %>
+      <div class="span5">
+        <div class="footer-banner">
+          <h3 class="footer-title">Stock App</h3>
+          <ul>
+            <li>
+            	<span class="fui-check"></span>
+            	<%= link_to 'Activos', assets_path %>
+            </li>
+            <li>
+            	<span class="fui-user"></span>
+            	<%= link_to 'Distribuidores', vendors_path %>
+            </li>
+            <li>
+            	<span class="fui-location"></span>
+            	<%= link_to 'Ubicaciones', locations_path %>
+            </li>
+          </ul>
+          <span>Universidad Politécnica de Chiapas</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>

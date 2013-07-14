@@ -1,12 +1,12 @@
-<h1>Listing vendors</h1>
+<h2>Listado de distribuidores</h2>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Nombre</th>
+      <th style="width:20px!important"></th>
+      <th style="width:20px!important"></th>
+      <th style="width:20px!important"></th>
     </tr>
   </thead>
 
@@ -14,9 +14,21 @@
     <% @vendors.each do |vendor| %>
       <tr>
         <td><%= vendor.name %></td>
-        <td><%= link_to 'Show', vendor %></td>
-        <td><%= link_to 'Edit', edit_vendor_path(vendor) %></td>
-        <td><%= link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to(vendor) do %>
+            <span class="fui-search"></span>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to(edit_vendor_path(vendor)) do %>
+            <span class="fui-new"></span>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to(vendor, method: :delete, data: { confirm: '¿Seguro que desea eliminar?' }) do %>
+            <span class="fui-cross"></span>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Vendor', new_vendor_path %>
+<%= link_to 'Nuevo distribuidor', new_vendor_path, :class=>"btn btn-large btn-info" %>

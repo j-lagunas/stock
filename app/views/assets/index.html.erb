@@ -1,18 +1,16 @@
-<h1>Listing assets</h1>
+<h2>Listado de activos</h2>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Part</th>
-      <th>Brand</th>
-      <th>vendor_id</th>
-      <th>location_id</th>
-      <th>Amount</th>
-      <th>Taken</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Nombre</th>
+      <th>Marca</th>
+      <th>Ubicación</th>
+      <th>Existencia</th>
+      <th>Utilizados</th>
+      <th style="width:20px!important"></th>
+      <th style="width:20px!important"></th>
+      <th style="width:20px!important"></th>
     </tr>
   </thead>
 
@@ -20,10 +18,14 @@
     <% @assets.each do |asset| %>
       <tr>
         <td><%= asset.name %></td>
-        <td><%= asset.part %></td>
         <td><%= asset.brand %></td>
-        <td><%= asset.vendor_id %></td>
-        <td><%= asset.location_id %></td>
+        <td>
+          <% if !asset.location.nil? %>
+            <span><%= asset.location.name %></span>
+          <% else %>
+            <span>--</span>
+          <% end %>
+        </td>
         <td><%= asset.amount %></td>
         <td>
           <% if !asset.taken %>
@@ -32,9 +34,21 @@
             <em><%= asset.taken %></em>
           <% end %>
         </td>
-        <td><%= link_to 'Show', asset %></td>
-        <td><%= link_to 'Edit', edit_asset_path(asset) %></td>
-        <td><%= link_to 'Destroy', asset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to(asset) do %>
+            <span class="fui-search"></span>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to(edit_asset_path(asset)) do %>
+            <span class="fui-new"></span>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to(asset, method: :delete, data: { confirm: '¿Seguro que desea eliminar?' }) do %>
+            <span class="fui-cross"></span>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -42,4 +56,4 @@
 
 <br>
 
-<%= link_to 'New Asset', new_asset_path %>
+<%= link_to 'Nuevo activo', new_asset_path, :class=>"btn btn-large btn-info" %>

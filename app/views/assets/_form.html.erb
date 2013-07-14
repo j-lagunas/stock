@@ -12,30 +12,31 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name, 'Nombre ' %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :part %><br>
+    <%= f.label :part, 'Número de parte ' %>
     <%= f.text_field :part %>
   </div>
   <div class="field">
-    <%= f.label :brand %><br>
+    <%= f.label :brand, 'Marca' %>
     <%= f.text_field :brand %>
   </div>
   <div class="field">
-    <%= f.label :vendor_id %><br>
+    <%= f.label :vendor_id, 'Distribuidor' %>
     <%= collection_select(:asset, :vendor_id, Vendor.all, :id, :name) %>
   </div>
   <div class="field">
-    <%= f.label :location_id %><br>
+    <%= f.label :location_id, 'Ubicación' %>
     <%= collection_select(:asset, :location_id, Location.all, :id, :name) %>
   </div>
   <div class="field">
-    <%= f.label :amount %><br>
+    <%= f.label :amount, 'Existencia' %>
     <%= f.number_field :amount %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Guardar', :class => "btn btn-large btn-info" %>
+    <%= link_to 'Volver a listado', assets_path, :class=>"btn btn-large"%>
   </div>
 <% end %>

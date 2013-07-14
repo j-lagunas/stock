@@ -12,10 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name, 'Nombre' %>
     <%= f.text_field :name %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Guardar', :class => "btn btn-large btn-info" %>
+    <%= link_to 'Volver a listado', locations_path, :class=>"btn btn-large"%>
   </div>
 <% end %>
